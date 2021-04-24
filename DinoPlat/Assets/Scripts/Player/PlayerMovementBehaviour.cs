@@ -16,6 +16,7 @@ namespace DinoPlat.Player
         private const float FEET_RADIUS = .05f;
         private Vector2 _movementInput;
         private bool _isGrounded;
+        public bool _jump;
         private Rigidbody2D _body;
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
@@ -41,8 +42,13 @@ namespace DinoPlat.Player
 
         private void FixedUpdate()
         {
-            _body.velocity = new Vector2(_movementInput.x * _playerData.WalkSpeed, 0f);
+            // Set velocity
+            float ySpeed = (_isGrounded && _jump) ? _playerData.JumpForce : _body.velocity.y;
+            _body.velocity = new Vector2(_movementInput.x * _playerData.WalkSpeed, ySpeed);
+            
+            // Reset variables
             _isGrounded = Physics2D.OverlapCircle(_feet.position, FEET_RADIUS, _playerData.GroundLayers);
+            _jump = false;
         }
 
         private void Update()
