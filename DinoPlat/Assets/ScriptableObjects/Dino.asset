@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633cf82f90066d948951acdc81df4e88, type: 3}
   m_Name: Dino
   m_EditorClassIdentifier: 
-  _walkSpeed: 0
+  _walkSpeed: 5
+  _groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
