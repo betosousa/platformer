@@ -12,6 +12,7 @@ namespace DinoPlat.Player
     {
         [Header("Move")]
         [SerializeField] private float _walkSpeed;
+		[SerializeField] private float _runSpeed;
 
         [Header("Jump")]
         [SerializeField] private LayerMask _groundLayers;
@@ -19,8 +20,8 @@ namespace DinoPlat.Player
 
 
         public float WalkSpeed { get { return _walkSpeed; } }
+		public float RunSpeed { get { return _runSpeed; } }
         public LayerMask GroundLayers { get { return _groundLayers; } }
         public float JumpForce { get { return _jumpForce; } }
-
     }
 }
