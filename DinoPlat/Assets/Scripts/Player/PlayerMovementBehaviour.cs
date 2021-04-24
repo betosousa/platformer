@@ -12,10 +12,11 @@ namespace DinoPlat.Player
     public class PlayerMovementBehaviour : MonoBehaviour
     {
         private const string SPEED_ANIM_PARAM = "Speed";
-        private Vector2 movementInput;
+        private Vector2 _movementInput;
         private Rigidbody2D _body;
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
+        [SerializeField] private PlayerData _playerData;
 
         private void OnEnable()
         {
@@ -30,12 +31,12 @@ namespace DinoPlat.Player
         /// <param name="context"></param>
         public void OnMovement(InputAction.CallbackContext context)
         {
-            movementInput = context.ReadValue<Vector2>();
+            _movementInput = context.ReadValue<Vector2>();
         }
 
         private void FixedUpdate()
         {
-            _body.velocity = new Vector2(movementInput.x, 0f);
+            _body.velocity = new Vector2(_movementInput.x * _playerData.WalkSpeed, 0f);
         }
 
         private void Update()
