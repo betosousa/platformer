@@ -25,6 +25,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""536a4a3a-f639-4b9b-a8f7-9a6045b65d99"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -93,6 +101,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fabef8e-2bb4-49f3-9007-60dce74cccf1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4b591e9-1eed-4f82-994e-8f23d1c46036"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -125,6 +155,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         // Dino
         m_Dino = asset.FindActionMap("Dino", throwIfNotFound: true);
         m_Dino_Move = m_Dino.FindAction("Move", throwIfNotFound: true);
+        m_Dino_Jump = m_Dino.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -175,11 +206,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Dino;
     private IDinoActions m_DinoActionsCallbackInterface;
     private readonly InputAction m_Dino_Move;
+    private readonly InputAction m_Dino_Jump;
     public struct DinoActions
     {
         private @InputMaster m_Wrapper;
         public DinoActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Dino_Move;
+        public InputAction @Jump => m_Wrapper.m_Dino_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Dino; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -192,6 +225,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_DinoActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_DinoActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_DinoActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_DinoActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_DinoActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_DinoActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_DinoActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +235,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
@@ -224,5 +263,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     public interface IDinoActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
