@@ -19,13 +19,30 @@ namespace DinoPlat.Player
         private Vector2 _movementInput;
         private bool _isGrounded;
         private bool _jump;
-        public bool _isRun;
+        private bool _isRun;
         private Rigidbody2D _body;
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private PlayerData _playerData;
         [SerializeField] private Transform _feet;
+
+
+        private float YSpeed { get { return (_isGrounded && _jump) ? _playerData.JumpForce : _body.velocity.y; } }
+        private float XSpeed
+        {
+            get
+            { 
+                // player wants to run
+                if (_isGrounded && _isRun) 
+                    return _playerData.RunSpeed * _movementInput.x;
+                // player wants to walk
+                else if (_isGrounded) 
+                    return _playerData.WalkSpeed * _movementInput.x;
+                // player is in mid air
+                else return _body.velocity.x;
+            }
+        }
 
         private void OnEnable()
         {
@@ -56,12 +73,21 @@ namespace DinoPlat.Player
             }
         }
 
+        /// <summary>
+        /// Stores player run input 
+        /// </summary>
+        /// <param name="context"></param>
+        public void OnRun(InputAction.CallbackContext context)
+        {
+            if (context.performed) _isRun = true;
+            if (context.canceled) _isRun = false;
+            Debug.Log("Run " + _isRun);
+        }
+
         private void FixedUpdate()
         {
             // Set velocity
-            float ySpeed = (_isGrounded && _jump) ? _playerData.JumpForce : _body.velocity.y;
-            float xSpeed = (_isGrounded && _isRun) ? _playerData.RunSpeed : _playerData.WalkSpeed;
-            _body.velocity = new Vector2(_movementInput.x * xSpeed, ySpeed);
+            _body.velocity = new Vector2(XSpeed, YSpeed);
 
             // Reset variables
             _isGrounded = Physics2D.OverlapCircle(_feet.position, FEET_RADIUS, _playerData.GroundLayers);

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Dino
   m_EditorClassIdentifier: 
   _walkSpeed: 5
+  _runSpeed: 15
   _groundLayers:
     serializedVersion: 2
     m_Bits: 256
+  _jumpForce: 20

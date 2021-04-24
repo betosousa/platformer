@@ -224,6 +224,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 536a4a3a-f639-4b9b-a8f7-9a6045b65d99
     m_ActionName: Dino/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 676911559603227671}
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ed4d95b0-f308-42bd-85f6-acc6d0a6f74d
+    m_ActionName: Dino/Run[/Keyboard/c,/DualShock4GamepadHID/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Dino
@@ -300,53 +315,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
         type: 3}
-      propertyPath: m_Pivot.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_Pivot.y
+      propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 246773241120528422, guid: 480e5d8787e118542bbbb1c96691b45d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 464031293495397213, guid: 480e5d8787e118542bbbb1c96691b45d,
         type: 3}
