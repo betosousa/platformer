@@ -36,7 +36,7 @@ namespace DinoPlat.Util
     /// </summary>
     public enum Scenes
     {
-        GAME = 0,
-        MENU = 1,
+        MENU = 0,
+        GAME = 1,
     }
 }
