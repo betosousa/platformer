@@ -13,6 +13,7 @@ namespace DinoPlat.Stats
     {
         private int _totalPoints;
         private Text _pointsUI;
+        [SerializeField] private Text _finalScoreUI;
 
         private void OnEnable()
         {
@@ -21,15 +22,29 @@ namespace DinoPlat.Stats
             UpdatePoints();
         }
 
+        /// <summary>
+        /// Adds the informed value to the players score
+        /// </summary>
+        /// <param name="value"></param>
         public void AddPoints(int value)
         {
             _totalPoints += value;
             UpdatePoints();
         }
 
+        /// <summary>
+        /// Shows the final score
+        /// </summary>
+        public void FinalScore()
+        {
+            _finalScoreUI.text = "Score: " + _totalPoints;
+        }
+
         void UpdatePoints()
         {
             _pointsUI.text = _totalPoints.ToString();
         }
+
+
     }
 }
