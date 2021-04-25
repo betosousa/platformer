@@ -15,7 +15,7 @@ namespace DinoPlat.Player
         private const string IS_GROUNDED_ANIM_PARAM = "IsGrounded";
         private const string IS_RUN_ANIM_PARAM = "IsRun";
         private const string JUMP_ANIM_TRIGGER = "Jump";
-        private const float FEET_RADIUS = .05f;
+        private const float FEET_RADIUS = .25f;
         private Vector2 _movementInput;
         private bool _isGrounded;
         private bool _jump;
