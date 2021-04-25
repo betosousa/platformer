@@ -81,7 +81,6 @@ namespace DinoPlat.Player
         {
             if (context.performed) _isRun = true;
             if (context.canceled) _isRun = false;
-            Debug.Log("Run " + _isRun);
         }
 
         private void FixedUpdate()

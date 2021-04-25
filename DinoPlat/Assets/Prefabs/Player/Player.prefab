@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2095013344829186166}
   - component: {fileID: 676911559603227671}
   - component: {fileID: 4379897552007264820}
+  - component: {fileID: 8304740739832564373}
   m_Layer: 0
   m_Name: Dino
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -535587735
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 8929304588701372190, guid: 69c50e5b5a7601f478a04f9330895b56,
     type: 3}
@@ -244,6 +245,44 @@ MonoBehaviour:
   m_DefaultActionMap: Dino
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8304740739832564373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095013344829186169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132e113c7c10261428864a81bd2ea791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 5ba35f97eb821b34ea0e07021fc4ba3f, type: 2}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 676911559603227671}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4379897552007264820}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2095013346478085807
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +315,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8801556775346352554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664168206403230352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132e113c7c10261428864a81bd2ea791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 5ba35f97eb821b34ea0e07021fc4ba3f, type: 2}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2664168206403230352}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3166280481609168111
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +615,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61751c6f406c1a14c89c086eae141f1c, type: 3}
+--- !u!1 &2664168206403230352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2074831833447568638, guid: 61751c6f406c1a14c89c086eae141f1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4049385124991422062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2697349390173570688 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2115749181039888622, guid: 61751c6f406c1a14c89c086eae141f1c,
