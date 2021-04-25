@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 676911559603227671}
   - component: {fileID: 4379897552007264820}
   - component: {fileID: 8304740739832564373}
+  - component: {fileID: 4126537206190207037}
+  - component: {fileID: 5528252088922491023}
   m_Layer: 0
   m_Name: Dino
   m_TagString: Player
@@ -283,6 +285,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4126537206190207037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095013344829186169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132e113c7c10261428864a81bd2ea791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 793569b7cfd463c4d94f9d880b462c84, type: 2}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5528252088922491023}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5528252088922491023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095013344829186169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d383cdd21f78a74c87621096296033d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095013346478085807
 GameObject:
   m_ObjectHideFlags: 0

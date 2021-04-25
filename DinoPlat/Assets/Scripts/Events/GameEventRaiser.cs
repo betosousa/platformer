@@ -11,7 +11,7 @@ namespace DinoPlat.Events
     public class GameEventRaiser : MonoBehaviour
     {
         [SerializeField] private GameEvent _gameEvent;
-        protected void RaiseEvent()
+        protected virtual void RaiseEvent()
         {
             if (_gameEvent != null)
                 _gameEvent.RaiseEvent();
