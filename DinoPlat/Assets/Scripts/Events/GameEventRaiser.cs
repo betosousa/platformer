@@ -8,15 +8,8 @@ namespace DinoPlat.Events
     /// Component that raises the event selected as the player enters the trigger collider
     /// </summary>
     [RequireComponent(typeof(Collider2D))]
-    public class GameEventRaiser : MonoBehaviour
+    public class GameEventRaiser : EventRaiserBehaviour
     {
-        [SerializeField] private GameEvent _gameEvent;
-        protected virtual void RaiseEvent()
-        {
-            if (_gameEvent != null)
-                _gameEvent.RaiseEvent();
-        }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
