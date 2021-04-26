@@ -12,7 +12,9 @@ namespace DinoPlat.Util
     [RequireComponent(typeof(Text))]
     public class TimerUI : RaiseEventOverTime
     {
+        [SerializeField] private Text _finalTimerText;
         private Text _timerText;
+        private int _currentTime;
 
         protected override void OnEnable()
         {
@@ -23,11 +25,19 @@ namespace DinoPlat.Util
 
         IEnumerator UpdateTimer()
         {
-            for (int i = Mathf.FloorToInt(TimeToRaiseEvent); i >= 0; i--)
+            for (_currentTime = Mathf.FloorToInt(TimeToRaiseEvent) - 1; _currentTime >= 0; _currentTime--)
             {
-                _timerText.text = i.ToString();
+                _timerText.text = _currentTime.ToString();
                 yield return new WaitForSeconds(1f);
             }
+        }
+
+        /// <summary>
+        /// Shows the final gameplay time
+        /// </summary>
+        public void FinalScore()
+        {
+            _finalTimerText.text = "Game Time: " +  (TimeToRaiseEvent - _currentTime) + "s";
         }
     }
 }
