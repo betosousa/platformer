@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 3297964601
+    locked: 0
+  - name: Platforms
+    uniqueID: 2995119641
+    locked: 0
+  - name: Items
+    uniqueID: 2174896827
+    locked: 0
   - name: Dino
     uniqueID: 3759379561
     locked: 0
