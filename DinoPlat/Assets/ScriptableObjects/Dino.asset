@@ -16,5 +16,5 @@ MonoBehaviour:
   _runSpeed: 15
   _groundLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   _jumpForce: 30
