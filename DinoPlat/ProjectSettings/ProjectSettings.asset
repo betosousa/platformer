@@ -724,10 +724,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 449e2300-b58d-4e1c-b676-b71a327663f9
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: DinoPlat
+  organizationId: alberto-4137851
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 1
