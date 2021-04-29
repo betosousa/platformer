@@ -2,10 +2,10 @@
 
 Mini platformer 2d mobile.
 
-##Documentação do que foi desenvolvido.
+## Documentação do que foi desenvolvido.
 
 
-###Código:
+### Código:
 
 Foram implementados 5 pastas contendo um total de 14 classes em C#.
 Todas as classes contém breve anotações no prórpio código sobre seu comportamento, bem como os principais métodos públicos.
@@ -66,11 +66,11 @@ Objeto reponsável por carregar as cenas do jogo, por isso, herda de ScriptableO
 _TimerUI_
 Mostra na tela o tempo restante de jogo, sendo uma subclasse de `RaiseEventOverTime`, dispara o evento de fim de jogo ao final da partida. Utilizado em conjunto com `GameEventListener` para mostrar o tempo total de jogo (pelo evento de fim de jogo). 
 
-###Tempo Gasto
+### Tempo Gasto
 
 Foram gastas cerca de 18 horas durante o desenvolvimento deste projeto entre os dias 22/04/2021 e 29/04/2021.
 
-###Dificuldades
+### Dificuldades
 
 * Nunca havia utilizado o analytics, mas pude consultar vídeos no youtube e utilizar o analytics para observar o número de vezes em que a fase foi iniciada, em que o jogador morreu e em que o jogo terminou;
 
